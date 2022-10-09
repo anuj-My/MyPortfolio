@@ -15,29 +15,89 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Inconsolata:wght@200;300;400;500;600;700&family=Karla:wght@300;400;500;600;700&family=Major+Mono+Display&family=Monoton&family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <title>React App</title>
   </head>
   <body>
+    <!-- netlify form here -->
+    <!--
+    <form name="contact-form" netlify netlify-honeypot="bot-field" hidden>
+      <div className="group-input-wrap">
+        <div className="input-label-group">
+          <label htmlFor="first-name">First Name</label>
+          <div className="input-wrap">
+            <input
+              type="text"
+              className="input-box"
+              name="first-name"
+              id="first-name"
+              placeholder="First Name"
+              autocomplete="off"
+              required
+            />
+          </div>
+        </div>
+
+        <div className="input-label-group">
+          <label htmlFor="last-name">Last Name</label>
+          <div className="input-wrap">
+            <input
+              type="text"
+              className="input-box"
+              name="last-name"
+              id="last-name"
+              placeholder="Last Name"
+              autocomplete="off"
+              required
+            />
+          </div>
+        </div>
+
+        <div className="input-label-group">
+          <label htmlFor="email">Email</label>
+          <div className="input-wrap">
+            <input
+              type="email"
+              className="input-box"
+              name="email"
+              id="email"
+              placeholder="Your email"
+              autocomplete="off"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div className="textarea-group-wrap">
+        <div className="input-label-group">
+          <label htmlFor="message">Message</label>
+          <div className="input-wrap">
+            <textarea
+              className="input-box"
+              name="message"
+              id="message"
+              placeholder="Write Your Message Here..."
+              min="5"
+              resize="false"
+              style="resize: none"
+              required
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <button
+        color="#172026"
+        bg="#fefcfd"
+        text="Say hello!"
+        as="button"
+        type="submit"
+      />
+    </form>
+  -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
