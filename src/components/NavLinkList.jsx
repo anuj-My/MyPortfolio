@@ -17,15 +17,20 @@ const Ul = styled.ul`
     width: 100%;
     padding-top: 3.5rem;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+
     transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     justify-content: center;
     gap: 2.3rem;
     z-index: 5;
   }
 `;
-export default function NavLinksList({ open }) {
+export default function NavLinksList({ open, setOpen }) {
+  function closeSideBar() {
+    setOpen(!open);
+  }
+
   const renderedList = navLinkList.map((item) => {
-    return <NavLinks key={item.id} item={item} />;
+    return <NavLinks key={item.id} item={item} closeSideBar={closeSideBar} />;
   });
 
   return <Ul open={open}>{renderedList}</Ul>;

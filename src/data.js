@@ -1,27 +1,28 @@
+import pinImage from "./assets/pinterestI.png";
+console.log(pinImage);
 export const navLinkList = [
   {
     id: 1,
     title: "home",
-    url: "#home",
+    url: "/",
   },
-
   {
     id: 2,
     title: "About",
-    url: "#about",
+    url: "about",
   },
 
-  {
-    id: 3,
-    title: "projects",
-    url: "#projects",
-  },
+  // {
+  //   id: 3,
+  //   title: "projects",
+  //   url: "projects",
+  // },
 
-  {
-    id: 4,
-    title: "contact",
-    url: "#contact",
-  },
+  // {
+  //   id: 4,
+  //   title: "contact",
+  //   url: "contact",
+  // },
 
   // {
   //   id: 4,
@@ -64,10 +65,9 @@ export const techs = [
 export const projectInfo = [
   {
     id: 1,
-    title: "Pinterest",
+    title: "Pinterest Clone",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae blanditiis eligendi architecto nesciunt et quos saepe.",
-    imgUrl:
-      "https://cdn.shopify.com/s/files/1/0306/6419/6141/articles/coding_languages.png?v=1619126283",
+    imgUrl: pinImage,
   },
 
   {

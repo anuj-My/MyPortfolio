@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Logo } from "./Logo";
 import MenuSideBar from "./MenuSideBar";
-
+import { Outlet } from "react-router-dom";
 const NavHeader = styled.header`
   background-color: #172026;
   display: flex;
@@ -21,12 +21,15 @@ const Nav = styled.nav`
 `;
 function Navbar() {
   return (
-    <NavHeader>
-      <Nav>
-        <Logo />
-        <MenuSideBar />
-      </Nav>
-    </NavHeader>
+    <>
+      <NavHeader>
+        <Nav>
+          <Logo />
+          <MenuSideBar />
+        </Nav>
+      </NavHeader>
+      <Outlet />
+    </>
   );
 }
 

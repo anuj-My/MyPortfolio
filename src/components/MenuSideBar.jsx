@@ -81,7 +81,7 @@ function MenuSideBar() {
         <div></div>
         <div></div>
       </StyledBars>
-      <NavLinksList open={open} />
+      <NavLinksList open={open} setOpen = {setOpen} />
     </>
   );
 }

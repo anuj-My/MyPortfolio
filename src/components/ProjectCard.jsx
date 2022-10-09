@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import { techs } from "../data";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const ProjectContainer = styled.div`
   display: grid;
@@ -36,7 +37,7 @@ const BadgeContainer = styled.div`
 `;
 const Badge = styled.span`
   display: inline-block;
-  background-color: #172026;
+  background-color: #172026f5;
   color: #fefcfd;
   padding: 1rem;
   text-transform: uppercase;
@@ -56,17 +57,19 @@ const RightContainer = styled.div``;
 const ImgContainer = styled.div`
   width: 100%;
   height: 100%;
+  border-radius: 2rem;
 `;
 const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4rem;
+  border-radius: 2rem;
+  background-position: bottom center;
 `;
 
 const ProjectCard = ({ item }) => {
   const { title, desc, imgUrl } = item;
-  console.log(title, desc, imgUrl);
+  console.log(imgUrl);
   return (
     <>
       <ProjectContainer>
@@ -77,7 +80,14 @@ const ProjectCard = ({ item }) => {
               return <Badge key={id}> {title}</Badge>;
             })}
           </BadgeContainer>
-          <Button color="#fefcfd" bg="#172026" text="View Project" />
+          <NavLink to="overview">
+            <Button
+              color="#fefcfd"
+              bg="#172026"
+              text="View Project"
+              as="button"
+            />
+          </NavLink>
 
           <Desc>{desc}</Desc>
         </LeftContainer>

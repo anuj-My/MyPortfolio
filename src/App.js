@@ -1,20 +1,24 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import styled from "styled-components";
 import Footer from "./components/Footer";
-
-const Container = styled.div``;
+import ProjectOverview from "./pages/ProjectOverview";
+import { Routes, Route } from "react-router-dom";
+import About from "./pages/About";
 
 function App() {
   return (
-    <Container>
-      <Navbar />
-
-      <Home />
+    <>
+      <Routes>
+        <Route path="/" element={<Navbar />}>
+          <Route index element={<Home />}></Route>
+          <Route path="about" element={<About />}></Route>
+          <Route path="overview" element={<ProjectOverview />} />
+        </Route>
+      </Routes>
 
       <Footer />
-    </Container>
+    </>
   );
 }
 
