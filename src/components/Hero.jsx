@@ -104,9 +104,9 @@ function Hero() {
           <h1>Anuj Maurya</h1>
           <h2>A Passionate Front-end Developer</h2>
           <p>
-            I love exploring and creating, I'm a lifelong learner and looking
-            for an opportunity to apply creative, problem solving and
-            communicative skills on a development team.
+            I love exploring and creating, I'm a lifelong learner looking for an
+            opportunity to apply creative, problem-solving, and communicative
+            skills on a development team.
           </p>
           <Button
             href="#contact"

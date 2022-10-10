@@ -1,59 +1,94 @@
 import React from "react";
 
 import styled from "styled-components";
+import NormalSocialMediaIcons from "./NormalSocialMediaIcons";
+import Quote from "./Quote";
 import SectionHeading from "./SectionHeading";
 
 const StyledSection = styled.section`
-  padding: 5rem 30rem;
+  padding: 15rem 30rem;
   display: grid;
   align-items: center;
 
   @media screen and (max-width: 1372px) {
-    padding: 5rem 20rem;
+    padding: 15rem 20rem;
   }
 
   @media screen and (max-width: 1172px) {
-    padding: 5rem 10rem;
+    padding: 15rem 10rem;
   }
 
   @media screen and (max-width: 960px) {
-    padding: 5rem 5rem;
+    padding: 15rem 5rem;
   }
 
   @media screen and (max-width: 837px) {
-    padding: 5rem 3rem;
+    padding: 15rem 3rem;
   }
 `;
 
 const Container = styled.div`
-  width: 85%;
-  max-width: 100%;
+  width: 100%;
+`;
+const AboutContentContainer = styled.div`
+  h2 {
+    font-weight: 400;
+    margin: 1rem 0;
+  }
+  p {
+    font-size: 1.8rem;
 
-  @media screen and (max-width: 960px) {
-    width: 100%;
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
   }
 `;
-const AboutContentContainer = styled.div``;
 
-const AboutSection = () => {
+const AboutSection = ({ quote, error }) => {
   return (
-    <StyledSection id="about">
-      <Container>
-        <SectionHeading title="About Me" />
-        <AboutContentContainer>
-          <div className="about-content">
-            <p>
-              I'm Anuj Maurya, a Web Developer based in Delhi, India. I Love
-              building beautiful UI Design and Web Apps. I have an understanding
-              of the importance of being able to adapt in a technology field
-              which is changing rapidly. I'm always willing to explore and learn
-              new skills and technologies.
-            </p>
-          </div>
-          <div className="illustration"></div>
-        </AboutContentContainer>
-      </Container>
-    </StyledSection>
+    <>
+      <StyledSection>
+        <Container>
+          <SectionHeading title="About Me" />
+          <AboutContentContainer>
+            <div className="about-content">
+              <p>
+                I'm Anuj Maurya, a Web Developer based in Delhi, India. I Love
+                building beautiful <strong>UI Designs</strong> and{" "}
+                <strong>Web Apps </strong>.
+              </p>
+              <h2>How I Started?</h2>
+              <p>
+                My journey started at the end of the year 2020, I started
+                learning Web Technologies so that I can make my career in IT
+                Industry, from my school time I have always been fascinated by
+                programming related stuff, when I got to know about Web
+                Development I decide to enter the Web Development domain, so far
+                I have learned Front-end technologies like HTML5, CSS3, JS,
+                React, and other frameworks and libraries related to CSS and JS,
+                I have a basic understanding of back-end development.
+              </p>
+              <p>
+                I have an understanding of the importance of being able to adapt
+                to a technology field that is changing rapidly. I'm always
+                willing to explore and learn new skills and technologies.
+              </p>
+            </div>
+          </AboutContentContainer>
+        </Container>
+      </StyledSection>
+      <Quote quote={quote} error={error} />
+      <h1
+        style={{
+          textAlign: "center",
+          marginBottom: "1.5rem",
+          fontWeight: "500",
+        }}
+      >
+        Lets Chat!
+      </h1>
+      <NormalSocialMediaIcons />
+    </>
   );
 };
 

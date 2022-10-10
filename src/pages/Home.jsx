@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import ProjectSection from "../components/ProjectSection";
 import ContactSection from "../components/ContactSection";
+import SocialMediaIcons from "../components/SocialMediaIcons";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Hero />
       <ProjectSection />
       <ContactSection />
+      <SocialMediaIcons />
     </>
   );
 };

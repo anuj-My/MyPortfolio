@@ -1,5 +1,14 @@
 import pinImage from "./assets/pinterestI.png";
-console.log(pinImage);
+import html from "./assets/html.png";
+import css from "./assets/css.png";
+import js from "./assets/js.png";
+import react from "./assets/react.png";
+import redux from "./assets/redux.png";
+import styledComponents from "./assets/styledcomponents.png";
+import firebase from "./assets/firebase.png";
+import { FaCodepen } from "react-icons/fa";
+import { FiGithub, FiTwitter, FiLinkedin } from "react-icons/fi";
+import { SiGmail } from "react-icons/si";
 export const navLinkList = [
   {
     id: 1,
@@ -68,6 +77,7 @@ export const projectInfo = [
     title: "Pinterest Clone",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae blanditiis eligendi architecto nesciunt et quos saepe.",
     imgUrl: pinImage,
+    path: "pinterest",
   },
 
   {
@@ -76,6 +86,7 @@ export const projectInfo = [
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae blanditiis eligendi architecto nesciunt et quos saepe.",
     imgUrl:
       "https://cdn-wordpress-info.futurelearn.com/wp-content/uploads/into-codin.jpg",
+    path: "kings",
   },
 
   {
@@ -84,5 +95,44 @@ export const projectInfo = [
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae blanditiis eligendi architecto nesciunt et quos saepe.",
     imgUrl:
       "https://www.condecosoftware.com/blog/wp-content/uploads/sites/11/2020/03/The-history-of-coding-and-how-it-affects-the-workplace-878x500.jpg",
+    path: "codewings",
+  },
+];
+
+export const icons = {
+  html,
+  css,
+  js,
+  react,
+  redux,
+  styledComponents,
+  firebase,
+};
+
+export const socialMediaDetails = [
+  {
+    id: 0,
+    url: "mailto:anuj89806@gmail.com",
+    icon: <SiGmail />,
+  },
+  {
+    id: 1,
+    url: "https://twitter.com/anuj89806",
+    icon: <FiTwitter />,
+  },
+  {
+    id: 2,
+    url: "https://github.com/anuj-My",
+    icon: <FiGithub />,
+  },
+  {
+    id: 3,
+    url: "https://linkedin.com/in/anuj-my",
+    icon: <FiLinkedin />,
+  },
+  {
+    id: 4,
+    url: "https://codepen.io/anujmaurya-7",
+    icon: <FaCodepen />,
   },
 ];

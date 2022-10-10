@@ -68,8 +68,7 @@ const Image = styled.img`
 `;
 
 const ProjectCard = ({ item }) => {
-  const { title, desc, imgUrl } = item;
-  console.log(imgUrl);
+  const { title, desc, imgUrl, path } = item;
   return (
     <>
       <ProjectContainer>
@@ -80,7 +79,7 @@ const ProjectCard = ({ item }) => {
               return <Badge key={id}> {title}</Badge>;
             })}
           </BadgeContainer>
-          <NavLink to="overview">
+          <NavLink to={path}>
             <Button
               color="#fefcfd"
               bg="#172026"

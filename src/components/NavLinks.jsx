@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 const LinkList = styled.li`
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
   a {
     &:link,
     &:visited {
@@ -38,9 +41,17 @@ const LinkList = styled.li`
 
 function NavLinks({ item, closeSideBar }) {
   const { url, title } = item;
+
+  function navLinkStyles({ isActive }) {
+    return {
+      backgroundPosition: isActive && "100%",
+      color: isActive && "#172026",
+      transform: isActive && " translateX(1rem)",
+    };
+  }
   return (
     <LinkList>
-      <NavLink to={url} onClick={closeSideBar}>
+      <NavLink to={url} style={navLinkStyles} onClick={closeSideBar} end>
         {title}
       </NavLink>
     </LinkList>

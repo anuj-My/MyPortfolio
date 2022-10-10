@@ -73,7 +73,7 @@ function MenuSideBar() {
   const [open, setOpen] = useState(false);
 
   const toggleBars = () => setOpen(!open);
-  console.log(open);
+
   return (
     <>
       <StyledBars onClick={toggleBars} open={open}>
@@ -81,7 +81,7 @@ function MenuSideBar() {
         <div></div>
         <div></div>
       </StyledBars>
-      <NavLinksList open={open} setOpen = {setOpen} />
+      <NavLinksList open={open} setOpen={setOpen} />
     </>
   );
 }
