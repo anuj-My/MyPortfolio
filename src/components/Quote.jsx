@@ -1,3 +1,4 @@
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import styled from "styled-components";
 
 const QuoteContainer = styled.div`
@@ -15,7 +16,7 @@ const QuoteContainer = styled.div`
 `;
 
 const Content = styled.div`
-  width: 80%;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,11 +24,17 @@ const Content = styled.div`
 
 const Top = styled.div`
   margin-bottom: 2rem;
+  display: flex;
+
+  svg {
+    font-size: 3rem;
+  }
 
   h3 {
     font-size: 4rem;
     font-weight: 300;
     text-align: center;
+    padding: 0 1rem;
 
     @media screen and (max-width: 1100px) {
       font-size: 3rem;
@@ -36,8 +43,13 @@ const Top = styled.div`
     @media screen and (max-width: 500px) {
       font-size: 2.4rem;
     }
+
+    @media screen and (max-width: 450px) {
+      font-size: 2rem;
+    }
   }
 `;
+
 const Bottom = styled.div`
   font-style: italic;
 
@@ -60,7 +72,9 @@ const Quote = ({ quote, error }) => {
       <Content>
         {error !== "" && <h1>{error}</h1>}
         <Top>
+          <FaQuoteLeft />
           <h3>{content}</h3>
+          <FaQuoteRight />
         </Top>
         <Bottom>
           <h4>{author}</h4>
