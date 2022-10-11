@@ -10,11 +10,11 @@ import KingsOverview from "./pages/KingsOverview";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 
+let quoteData = {
+  content: "",
+  author: "",
+};
 function App() {
-  let quoteData = {
-    content: "",
-    author: "",
-  };
   const [quote, setQuote] = useState(quoteData);
   const [error, setError] = useState("");
 
@@ -23,6 +23,7 @@ function App() {
       const response = await axios.get(
         "http://api.quotable.io/random?maxLength=100"
       );
+
       const { content, author } = response.data;
       setQuote({
         ...quoteData,
