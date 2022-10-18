@@ -1,10 +1,3 @@
-/* :root{
-    --defaultFontSize: 1.6rem;
-    --mobileFontSize: 1.4rem;
-    --mobile: 768px;
-    --tab: 1180px;
-} */
-
 *,
 *::before,
 *::after {
@@ -21,8 +14,8 @@ html {
 }
 
 body::-webkit-scrollbar {
-  width: 0.8rem;
-  background-color: #222;
+  width: 1rem;
+  background-color: #172026;
 }
 
 body::-webkit-scrollbar-track {
@@ -30,7 +23,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
+  background-color: #fcfefe;
   border-radius: 5px;
 }
 

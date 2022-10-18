@@ -1,9 +1,10 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import PortableText from "react-portable-text";
+import { client } from "../client";
 import styled from "styled-components";
-import NormalSocialMediaIcons from "./NormalSocialMediaIcons";
-import Quote from "./Quote";
-import SectionHeading from "./SectionHeading";
+import NormalSocialMediaIcons from "../components/NormalSocialMediaIcons";
+import Quote from "../components/Quote";
+import SectionHeading from "../components/SectionHeading";
 
 const StyledSection = styled.section`
   padding: 15rem 30rem;
@@ -45,6 +46,13 @@ const AboutContentContainer = styled.div`
 `;
 
 const AboutSection = ({ quote, error }) => {
+  const [about, setAbout] = useState([]);
+  useEffect(() => {
+    const query = `*[_type == 'about']`;
+
+    client.fetch(query).then((data) => setAbout(data));
+  }, []);
+  console.log(about);
   return (
     <>
       <StyledSection>
@@ -52,7 +60,20 @@ const AboutSection = ({ quote, error }) => {
           <SectionHeading title="About Me" />
           <AboutContentContainer>
             <div className="about-content">
-              <p>
+              {about.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <h2>{item.title}</h2>
+
+                    <PortableText
+                      content={item.content}
+                      projectId={process.env.REACT_APP_SANITY_PROJECT_ID}
+                      dataset="production"
+                    />
+                  </div>
+                );
+              })}
+              {/* <p>
                 I'm Anuj Maurya, a Web Developer based in Delhi, India. I Love
                 building beautiful <strong>UI Designs</strong> and{" "}
                 <strong>Web Apps </strong>.
@@ -72,7 +93,7 @@ const AboutSection = ({ quote, error }) => {
                 I have an understanding of the importance of being able to adapt
                 to a technology field that is changing rapidly. I'm always
                 willing to explore and learn new skills and technologies.
-              </p>
+              </p> */}
             </div>
           </AboutContentContainer>
         </Container>

@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
+import { client } from "../client";
 import styled from "styled-components";
-import SectionHeading from "./SectionHeading";
-import ProjectCard from "./ProjectCard";
-import { projectInfo } from "../data";
+import SectionHeading from "../components/SectionHeading";
+import ProjectCard from "../components/ProjectCard";
+
 const StyledSection = styled.section`
   padding: 5rem 30rem;
   display: grid;
@@ -29,8 +31,29 @@ const Container = styled.div`
 `;
 
 const ProjectSection = () => {
-  const renderedProjectList = projectInfo.map((item) => {
-    return <ProjectCard item={item} key={item.id} />;
+  const [projectsInfo, setProjectsInfo] = useState(null);
+
+  useEffect(() => {
+    const query = `*[_type == 'projects']{
+      title,
+      slug,
+      badges,
+      description,
+      imgUrl{
+        asset->{
+          _id,
+          url
+        },
+        alt
+      }
+    }`;
+    client.fetch(query).then((projectData) => setProjectsInfo(projectData));
+  }, []);
+
+  if (!projectsInfo) return;
+
+  const renderedProjectList = projectsInfo.map((item) => {
+    return <ProjectCard item={item} key={item.slug.current} />;
   });
   return (
     <StyledSection id="projects">

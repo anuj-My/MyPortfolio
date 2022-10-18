@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import { Logo } from "./Logo";
-import MenuSideBar from "./MenuSideBar";
+import { Logo } from "../components/Logo";
+import MenuSideBar from "../components/MenuSideBar";
 import { Outlet } from "react-router-dom";
 const NavHeader = styled.header`
   background-color: #172026;
+  /* background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18); */
   display: flex;
   align-items: center;
   justify-content: center;

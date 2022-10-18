@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import SectionHeading from "./SectionHeading";
-import Button from "./Button";
+import SectionHeading from "../components/SectionHeading";
+import Button from "../components/Button";
 
 const StyledSection = styled.section`
   padding: 5rem 30rem;

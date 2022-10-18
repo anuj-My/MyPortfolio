@@ -77,7 +77,7 @@ export const projectInfo = [
     title: "Pinterest Clone",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae blanditiis eligendi architecto nesciunt et quos saepe.",
     imgUrl: pinImage,
-    path: "pinterest",
+    path: "project",
   },
 
   {
@@ -86,7 +86,7 @@ export const projectInfo = [
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae blanditiis eligendi architecto nesciunt et quos saepe.",
     imgUrl:
       "https://cdn-wordpress-info.futurelearn.com/wp-content/uploads/into-codin.jpg",
-    path: "kings",
+    path: "project",
   },
 
   {
@@ -95,7 +95,7 @@ export const projectInfo = [
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae blanditiis eligendi architecto nesciunt et quos saepe.",
     imgUrl:
       "https://www.condecosoftware.com/blog/wp-content/uploads/sites/11/2020/03/The-history-of-coding-and-how-it-affects-the-workplace-878x500.jpg",
-    path: "codewings",
+    path: "project",
   },
 ];
 

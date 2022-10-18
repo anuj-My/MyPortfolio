@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Logo } from "./Logo";
+import { Logo } from "../components/Logo";
 
 export const StyledFooter = styled.footer`
   width: 100%;

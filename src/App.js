@@ -1,14 +1,12 @@
-import "./App.css";
-import axios from "axios";
 import { useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import PinterestOverview from "./pages/PinterestOverview";
-import CodeWingsOverview from "./pages/CodeWingsOverview";
-import KingsOverview from "./pages/KingsOverview";
+import axios from "axios";
 import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Navbar from "./container/Navbar";
+import Home from "./pages/Home";
+import Footer from "./container/Footer";
 import About from "./pages/About";
+import ProjectDetails from "./pages/ProjectDetails";
 
 let quoteData = {
   content: "",
@@ -49,9 +47,7 @@ function App() {
             path="about"
             element={<About quote={quote} error={error} />}
           ></Route>
-          <Route path="pinterest" element={<PinterestOverview />} />
-          <Route path="kings" element={<KingsOverview />} />
-          <Route path="codewings" element={<CodeWingsOverview />} />
+          <Route path="projects/:slug" element={<ProjectDetails />} />
         </Route>
       </Routes>
 

@@ -1,4 +1,4 @@
-import AboutSection from "../components/AboutSection";
+import AboutSection from "../container/AboutSection";
 const About = ({ quote, error }) => {
   return <AboutSection quote={quote} error={error} />;
 };

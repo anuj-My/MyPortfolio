@@ -1,8 +1,11 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import PortableText from "react-portable-text";
+import { urlFor } from "../client";
 import styled from "styled-components";
-import Button from "./Button";
-import Icon from "./Icon";
-import { icons } from "../data";
-const { html, css, react, redux, firebase, styledComponents } = icons;
+import { client } from "../client";
+import Button from "../components/Button";
+import Icon from "../components/Icon";
 
 const StyledSection = styled.section`
   padding: 15rem 30rem;
@@ -86,17 +89,41 @@ const InfoContainer = styled.div`
   }
 `;
 
-const ProjectDetails = ({ title }) => {
+const ProjectDetails = () => {
+  const { slug } = useParams();
+
+  const [project, setProject] = useState(null);
+
+  useEffect(() => {
+    const query = `*[slug.current == '${slug}']{
+      title,
+      _id,
+      description,
+      slug,
+      imgUrl{
+        asset->{
+          _id,
+          url
+        }       
+      },
+      content,
+      images
+    }`;
+
+    client.fetch(query).then((projectData) => setProject(projectData[0]));
+  }, [slug]);
+
+  if (!project) return <div>loading...</div>;
+
+  const { title, description, imgUrl, content, images } = project;
+
   return (
     <StyledSection>
       <Container>
         <ProjectContainer>
           <Heading>{title}</Heading>
           <ParaSmall>Summary</ParaSmall>
-          <Para>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex ab eius
-            consequuntur?
-          </Para>
+          <Para>{description}</Para>
           <BtnContainer>
             <Button
               color="#fefcfd"
@@ -108,18 +135,17 @@ const ProjectDetails = ({ title }) => {
             <Button color="#fefcfd" bg="#172026" text="View" href="" />
           </BtnContainer>
           <ImgContainer>
-            <Image src="https://miro.medium.com/max/1400/1*1AktzTtx2ZOH1kb8yv7Piw.jpeg" />
+            <Image src={imgUrl.asset.url} alt={title} />
           </ImgContainer>
           <TechInfoContainer>
             <Left>
               <HeadingSmall>Tech Stack Used</HeadingSmall>
               <IconsContainer>
-                <Icon src={html} />
-                <Icon src={css} />
-                <Icon src={styledComponents} />
-                <Icon src={react} />
-                <Icon src={redux} />
-                <Icon src={firebase} />
+                {images &&
+                  images.map((image, index) => {
+                    console.log(image);
+                    return <Icon src={urlFor(image).url()} key={index} />;
+                  })}
               </IconsContainer>
             </Left>
             <Right>
@@ -128,14 +154,11 @@ const ProjectDetails = ({ title }) => {
             </Right>
           </TechInfoContainer>
           <InfoContainer>
-            <Heading>Explanation</Heading>
-            <Para>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-              quaerat illo quisquam perspiciatis eius laboriosam, officia
-              voluptas necessitatibus vitae minus exercitationem id cum
-              distinctio omnis, quia pariatur obcaecati reprehenderit
-              accusantium!
-            </Para>
+            <PortableText
+              content={content}
+              projectId={process.env.REACT_APP_SANITY_PROJECT_ID}
+              dataset="production"
+            />
           </InfoContainer>
         </ProjectContainer>
       </Container>

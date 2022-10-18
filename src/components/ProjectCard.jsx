@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "./Button";
-import { techs } from "../data";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
@@ -68,18 +67,19 @@ const Image = styled.img`
 `;
 
 const ProjectCard = ({ item }) => {
-  const { title, desc, imgUrl, path } = item;
+  const { title, description, slug, imgUrl, badges } = item;
+  // console.log("project card");
   return (
     <>
       <ProjectContainer>
         <LeftContainer>
           <Title>{title}</Title>
           <BadgeContainer>
-            {techs.map(({ title, id }) => {
-              return <Badge key={id}> {title}</Badge>;
+            {badges.map((item) => {
+              return <Badge key={item}> {item}</Badge>;
             })}
           </BadgeContainer>
-          <NavLink to={path}>
+          <NavLink to={`/projects/${slug.current}`}>
             <Button
               color="#fefcfd"
               bg="#172026"
@@ -88,11 +88,11 @@ const ProjectCard = ({ item }) => {
             />
           </NavLink>
 
-          <Desc>{desc}</Desc>
+          <Desc>{description}</Desc>
         </LeftContainer>
         <RightContainer>
           <ImgContainer>
-            <Image src={imgUrl} />
+            <Image src={imgUrl.asset.url} alt={imgUrl.alt} />
           </ImgContainer>
         </RightContainer>
       </ProjectContainer>
