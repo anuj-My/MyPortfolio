@@ -5,6 +5,7 @@ const HeadingWrapper = styled.div`
   align-items: center;
   gap: 4rem;
   margin-bottom: 5rem;
+  color: #172026;
 
   @media screen and (max-width: 800px) {
     gap: 1rem;

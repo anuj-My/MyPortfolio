@@ -3,11 +3,11 @@ import { Logo } from "../components/Logo";
 import MenuSideBar from "../components/MenuSideBar";
 import { Outlet } from "react-router-dom";
 const NavHeader = styled.header`
-  background-color: #172026;
-  /* background: rgba(255, 255, 255, 0.25);
+  background-color: rgb(23, 32, 38);
+  /* background: rgba(23, 32, 38, 0.743);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18); */
+  border: 1px solid rgba(23, 32, 38, 0.441); */
   display: flex;
   align-items: center;
   justify-content: center;

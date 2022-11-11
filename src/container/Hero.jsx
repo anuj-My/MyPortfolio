@@ -4,6 +4,7 @@ import Button from "../components/Button";
 const StyledHero = styled.section`
   display: flex;
   align-items: center;
+  /* background-color: #172026; */
   min-height: 100vh;
   padding: 0 30rem;
 
@@ -27,6 +28,7 @@ const StyledHero = styled.section`
 const Container = styled.div`
   width: 85%;
   max-width: 100%;
+  color: #172026;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -88,11 +90,6 @@ const Container = styled.div`
       font-size: 1.4rem;
     }
   }
-  /* media qureis */
-
-  /* @media screen and (max-width: 600px) {
-    width: 100%;
-  } */
 `;
 
 function Hero() {

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ScrollToTop from "./components/ScrollToTop";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />}></Route>

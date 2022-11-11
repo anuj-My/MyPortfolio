@@ -4,6 +4,7 @@ import about from "./about";
 import projectDetails from "./projectDetails";
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type";
+import skills from "./skills";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -15,5 +16,6 @@ export default createSchema({
     /* Your types here! */
     about,
     projectDetails,
+    skills,
   ]),
 });

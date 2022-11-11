@@ -143,7 +143,6 @@ const ProjectDetails = () => {
               <IconsContainer>
                 {images &&
                   images.map((image, index) => {
-                    console.log(image);
                     return <Icon src={urlFor(image).url()} key={index} />;
                   })}
               </IconsContainer>

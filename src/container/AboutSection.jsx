@@ -52,7 +52,9 @@ const AboutSection = ({ quote, error }) => {
 
     client.fetch(query).then((data) => setAbout(data));
   }, []);
-  console.log(about);
+
+  if(!about) return 
+
   return (
     <>
       <StyledSection>
