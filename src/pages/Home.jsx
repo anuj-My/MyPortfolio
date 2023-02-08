@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Hero from "../container/Hero";
 import ProjectSection from "../container/ProjectSection";
 import ContactSection from "../container/ContactSection";
@@ -6,13 +7,17 @@ import SkillSection from "../container/SkillSection";
 
 const Home = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Hero />
       <ProjectSection />
       <SkillSection />
       <ContactSection />
       <SocialMediaIcons />
-    </>
+    </motion.div>
   );
 };
 

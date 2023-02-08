@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import ScrollToTop from "./components/ScrollToTop";
 import axios from "axios";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 import Navbar from "./container/Navbar";
 import Home from "./pages/Home";
@@ -14,6 +15,7 @@ let quoteData = {
   author: "",
 };
 function App() {
+  const location = useLocation();
   const [quote, setQuote] = useState(quoteData);
   const [error, setError] = useState("");
 
@@ -42,17 +44,18 @@ function App() {
   return (
     <>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Navbar />}>
-          <Route index element={<Home />}></Route>
-          <Route
-            path="about"
-            element={<About quote={quote} error={error} />}
-          ></Route>
-          <Route path="projects/:slug" element={<ProjectDetails />} />
-        </Route>
-      </Routes>
-
+      <AnimatePresence>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Navbar />}>
+            <Route index element={<Home />}></Route>
+            <Route
+              path="about"
+              element={<About quote={quote} error={error} />}
+            ></Route>
+            <Route path="projects/:slug" element={<ProjectDetails />} />
+          </Route>
+        </Routes>
+      </AnimatePresence>
       <Footer />
     </>
   );

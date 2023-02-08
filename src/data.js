@@ -114,25 +114,30 @@ export const socialMediaDetails = [
     id: 0,
     url: "mailto:anuj89806@gmail.com",
     icon: <SiGmail />,
+    title: "Gmail",
   },
   {
     id: 1,
     url: "https://twitter.com/anuj89806",
     icon: <FiTwitter />,
+    title: "Twitter",
   },
   {
     id: 2,
     url: "https://github.com/anuj-My",
     icon: <FiGithub />,
+    title: "Github",
   },
   {
     id: 3,
     url: "https://linkedin.com/in/anuj-my",
     icon: <FiLinkedin />,
+    title: "Linkedin",
   },
   {
     id: 4,
     url: "https://codepen.io/anujmaurya-7",
     icon: <FaCodepen />,
+    title: "Codepen",
   },
 ];

@@ -70,10 +70,10 @@ const IconsWrapper = styled.div`
 `;
 
 const SocialMediaIcons = () => {
-  const iconsList = socialMediaDetails.map(({ url, icon }, index) => {
+  const iconsList = socialMediaDetails.map(({ url, icon, title }, index) => {
     return (
       <IconsWrapper key={index}>
-        <a href={url} target="_blank" rel="noreferrer">
+        <a title={title} href={url} target="_blank" rel="noreferrer">
           {icon}
         </a>
       </IconsWrapper>
