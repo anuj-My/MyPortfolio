@@ -97,6 +97,7 @@ const ProjectDetails = () => {
   useEffect(() => {
     const query = `*[slug.current == '${slug}']{
       title,
+      site,
       _id,
       description,
       slug,
@@ -115,53 +116,61 @@ const ProjectDetails = () => {
 
   if (!project) return <div>loading...</div>;
 
-  const { title, description, imgUrl, content, images } = project;
+  const { title, site, description, imgUrl, content, images } = project;
 
   return (
-    <StyledSection>
-      <Container>
-        <ProjectContainer>
-          <Heading>{title}</Heading>
-          <ParaSmall>Summary</ParaSmall>
-          <Para>{description}</Para>
-          <BtnContainer>
-            <Button
-              color="#fefcfd"
-              bg="#172026"
-              text="Github"
-              href="https://github.com/anuj-My/Pinterest"
-              target="_blank"
-            />
-            <Button color="#fefcfd" bg="#172026" text="View" href="" />
-          </BtnContainer>
-          <ImgContainer>
-            <Image src={imgUrl.asset.url} alt={title} />
-          </ImgContainer>
-          <TechInfoContainer>
-            <Left>
-              <HeadingSmall>Tech Stack Used</HeadingSmall>
-              <IconsContainer>
-                {images &&
-                  images.map((image, index) => {
-                    return <Icon src={urlFor(image).url()} key={index} />;
-                  })}
-              </IconsContainer>
-            </Left>
-            <Right>
-              <HeadingSmall>Type</HeadingSmall>
-              <Para>Social Media</Para>
-            </Right>
-          </TechInfoContainer>
-          <InfoContainer>
-            <PortableText
-              content={content}
-              projectId={process.env.REACT_APP_SANITY_PROJECT_ID}
-              dataset="production"
-            />
-          </InfoContainer>
-        </ProjectContainer>
-      </Container>
-    </StyledSection>
+    project && (
+      <StyledSection>
+        <Container>
+          <ProjectContainer>
+            <Heading>{title}</Heading>
+            <ParaSmall>Summary</ParaSmall>
+            <Para>{description}</Para>
+            <BtnContainer>
+              <Button
+                color="#fefcfd"
+                bg="#172026"
+                text="Github"
+                href={`https://github.com/anuj-My/${title}`}
+                target="_blank"
+              />
+              <Button
+                color="#fefcfd"
+                bg="#172026"
+                text="View"
+                href={`https://${site}.netlify.com`}
+                target="_blank"
+              />
+            </BtnContainer>
+            <ImgContainer>
+              <Image src={imgUrl.asset.url} alt={title} />
+            </ImgContainer>
+            <TechInfoContainer>
+              <Left>
+                <HeadingSmall>Tech Stack Used</HeadingSmall>
+                <IconsContainer>
+                  {images &&
+                    images.map((image, index) => {
+                      return <Icon src={urlFor(image).url()} key={index} />;
+                    })}
+                </IconsContainer>
+              </Left>
+              <Right>
+                <HeadingSmall>Type</HeadingSmall>
+                <Para>Social Media</Para>
+              </Right>
+            </TechInfoContainer>
+            <InfoContainer>
+              <PortableText
+                content={content}
+                projectId={process.env.REACT_APP_SANITY_PROJECT_ID}
+                dataset="production"
+              />
+            </InfoContainer>
+          </ProjectContainer>
+        </Container>
+      </StyledSection>
+    )
   );
 };
 

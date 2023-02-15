@@ -50,11 +50,12 @@ const ProjectSection = () => {
     client.fetch(query).then((projectData) => setProjectsInfo(projectData));
   }, []);
 
-  if (!projectsInfo) return;
+  if (projectsInfo === null) return;
 
-  const renderedProjectList = projectsInfo.map((item) => {
-    return <ProjectCard item={item} key={item.slug.current} />;
+  const renderedProjectList = projectsInfo.map((item, index) => {
+    return <ProjectCard item={item} key={index} />;
   });
+
   return (
     <StyledSection id="projects">
       <Container>
