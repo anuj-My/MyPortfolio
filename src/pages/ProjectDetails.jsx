@@ -75,8 +75,6 @@ const IconsContainer = styled.div`
   gap: 2rem;
 `;
 
-const Right = styled.div``;
-
 const HeadingSmall = styled.h4`
   margin-bottom: 0.8rem;
 `;
