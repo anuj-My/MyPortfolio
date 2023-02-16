@@ -8,7 +8,8 @@ import Button from "../components/Button";
 import Icon from "../components/Icon";
 
 const StyledSection = styled.section`
-  padding: 15rem 30rem;
+  padding: 15rem 30rem 0rem 30rem;
+  min-height: 100vh;
   display: grid;
   align-items: center;
 
@@ -155,10 +156,10 @@ const ProjectDetails = () => {
                     })}
                 </IconsContainer>
               </Left>
-              <Right>
+              {/* <Right>
                 <HeadingSmall>Type</HeadingSmall>
                 <Para>Social Media</Para>
-              </Right>
+              </Right> */}
             </TechInfoContainer>
             <InfoContainer>
               <PortableText
