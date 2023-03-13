@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { client, urlFor } from "../client";
+import { client } from "../client";
 
 import SectionHeading from "../components/SectionHeading";
 import { skillsData } from "../data";
