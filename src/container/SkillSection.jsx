@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { client, urlFor } from "../client";
 
 import SectionHeading from "../components/SectionHeading";
+import { skillsData } from "../data";
 
 const StyledSection = styled.section`
   padding: 5rem 30rem;
@@ -59,7 +60,8 @@ const Icon = styled.div`
 `;
 
 const Image = styled.img`
-  width: 3.5rem;
+  width: 4.5rem;
+  object-fit: contain;
 `;
 
 const RightContainer = styled.div`
@@ -93,7 +95,7 @@ const SkillSection = () => {
   }, []);
 
   if (!skills) return;
-  const { title, description, images } = skills[0];
+  const { title, description } = skills[0];
 
   return (
     <StyledSection id="Skills">
@@ -102,10 +104,10 @@ const SkillSection = () => {
         <SkillWrapper>
           <LeftContainer>
             <IconsWrapper>
-              {images.map((image, index) => {
+              {skillsData.map(({ image, title }, index) => {
                 return (
-                  <Icon key={index}>
-                    <Image src={urlFor(image).url()} />
+                  <Icon title={title} key={index}>
+                    <Image src={image} />
                   </Icon>
                 );
               })}

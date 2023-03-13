@@ -86,6 +86,16 @@ const InfoContainer = styled.div`
     margin-bottom: 0.5rem;
     font-size: 2.5rem;
   }
+  p {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+  ul {
+    margin-bottom: 1.6rem;
+    li {
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 const ProjectDetails = () => {

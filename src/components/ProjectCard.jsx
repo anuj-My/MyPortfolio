@@ -5,9 +5,9 @@ import { NavLink } from "react-router-dom";
 
 const ProjectContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(49%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
 
-  gap: 1rem;
+  gap: 2rem;
 
   &:not(:last-child) {
     margin-bottom: 4rem;
@@ -27,7 +27,7 @@ const Title = styled.h1`
   font-weight: 400;
 `;
 const BadgeContainer = styled.div`
-  margin-bottom: 2.8rem;
+  margin-bottom: 1.5rem;
   width: 90%;
 
   @media screen and (max-width: 768px) {
@@ -41,6 +41,7 @@ const Badge = styled.span`
   padding: 1rem;
   text-transform: uppercase;
   border-radius: 5px;
+  font-size: 1.2rem;
 
   &:not(:last-child) {
     margin-right: 1rem;
@@ -49,21 +50,20 @@ const Badge = styled.span`
 `;
 
 const Desc = styled.p`
-  margin-top: 3.2rem;
+  margin-top: 3rem;
 `;
 const RightContainer = styled.div``;
 
 const ImgContainer = styled.div`
   width: 100%;
   height: 100%;
-  border-radius: 2rem;
 `;
+
 const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 2rem;
-  background-position: bottom center;
 `;
 
 const ProjectCard = ({ item }) => {
@@ -75,11 +75,11 @@ const ProjectCard = ({ item }) => {
         <LeftContainer>
           <Title>{title}</Title>
           <BadgeContainer>
-            {badges.map((item) => {
+            {badges?.map((item) => {
               return <Badge key={item}> {item}</Badge>;
             })}
           </BadgeContainer>
-          <NavLink to={`/projects/${slug.current}`}>
+          <NavLink to={`/projects/${slug?.current}`}>
             <Button
               color="#fefcfd"
               bg="#172026"
@@ -92,7 +92,7 @@ const ProjectCard = ({ item }) => {
         </LeftContainer>
         <RightContainer>
           <ImgContainer>
-            <Image src={imgUrl.asset.url} alt={imgUrl.alt} />
+            <Image src={imgUrl?.asset?.url} alt={imgUrl?.alt} />
           </ImgContainer>
         </RightContainer>
       </ProjectContainer>

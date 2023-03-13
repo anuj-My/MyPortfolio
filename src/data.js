@@ -141,3 +141,43 @@ export const socialMediaDetails = [
     title: "Codepen",
   },
 ];
+
+export const skillsData = [
+  {
+    image: "https://cdn-icons-png.flaticon.com/512/1532/1532556.png",
+    title: "HTML",
+  },
+  {
+    image: "https://cdn-icons-png.flaticon.com/512/5968/5968242.png",
+    title: "CSS",
+  },
+  {
+    image:
+      "https://camo.githubusercontent.com/2512b49c89512f2ff3718f7257f48ed5c46a4e331abbd890b6c5e8c0e458434f/68747470733a2f2f676574626f6f7473747261702e636f6d2f646f63732f352e322f6173736574732f6272616e642f626f6f7473747261702d6c6f676f2d736861646f772e706e67",
+    title: "Bootstrap",
+  },
+  {
+    image: "https://cdn-icons-png.flaticon.com/512/5968/5968358.png",
+    title: "Sass",
+  },
+  {
+    image:
+      "https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png",
+    title: "Javascript",
+  },
+  {
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+    title: "React",
+  },
+  {
+    image:
+      "https://miro.medium.com/v2/resize:fit:318/1*7jRD5QhgARucFKvRHFxpOg.png",
+    title: "Styled Components",
+  },
+  {
+    image:
+      "https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-512.png",
+    title: "Firebase",
+  },
+];

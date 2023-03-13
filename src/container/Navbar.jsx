@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Logo } from "../components/Logo";
 import MenuSideBar from "../components/MenuSideBar";
@@ -16,6 +17,8 @@ const NavHeader = styled.header`
   top: 0;
   width: 100%;
   z-index: 5;
+  transform: translateY(${({ scroll }) => (scroll ? 0 : -9.5)}rem);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 `;
 const Nav = styled.nav`
   display: flex;
@@ -24,9 +27,29 @@ const Nav = styled.nav`
   width: 95%;
 `;
 function Navbar() {
+  const [onScroll, setOnScroll] = useState(true);
+
+  let lastScrollY = window.scrollY;
+
+  const controlNavbar = () => {
+    if (window.scrollY > lastScrollY) {
+      setOnScroll(false);
+    } else {
+      setOnScroll(true);
+    }
+    lastScrollY = window.scrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  });
   return (
     <>
-      <NavHeader>
+      <NavHeader scroll={onScroll}>
         <Nav>
           <Logo />
           <MenuSideBar />
