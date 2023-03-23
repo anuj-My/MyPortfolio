@@ -14,6 +14,11 @@ const Btn = styled.a`
     font-size: 1.6rem;
     border: none;
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.4rem;
+      padding: 1.4rem 2.8rem;
+    }
   }
 
   &:hover {
@@ -53,7 +58,7 @@ const Btn = styled.a`
 
 const Button = ({ color, bg, text, as, type, href, target }) => {
   return (
-    <Btn color={color} bg={bg} as={as} type={type} href={href} target = {target}>
+    <Btn color={color} bg={bg} as={as} type={type} href={href} target={target}>
       {text}
     </Btn>
   );
