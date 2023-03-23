@@ -4,6 +4,7 @@ import ProjectSection from "../container/ProjectSection";
 import ContactSection from "../container/ContactSection";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 import SkillSection from "../container/SkillSection";
+import Footer from "../container/Footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <ProjectSection />
       <SkillSection />
       <ContactSection />
+      <Footer/>
       <SocialMediaIcons />
     </motion.div>
   );

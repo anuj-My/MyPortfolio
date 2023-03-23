@@ -180,4 +180,8 @@ export const skillsData = [
       "https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-512.png",
     title: "Firebase",
   },
+  {
+    image: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
+    title: "Git",
+  },
 ];

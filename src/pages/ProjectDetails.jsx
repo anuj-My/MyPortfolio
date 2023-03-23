@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { client } from "../client";
 import Button from "../components/Button";
 import Icon from "../components/Icon";
+import Footer from "../container/Footer";
 
 const StyledSection = styled.section`
   padding: 15rem 30rem 0rem 30rem;
@@ -86,6 +87,17 @@ const InfoContainer = styled.div`
     margin-bottom: 0.5rem;
     font-size: 2.5rem;
   }
+
+  h2 {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.7rem;
+  }
   p {
     font-size: 1.6rem;
     margin-bottom: 0.6rem;
@@ -128,7 +140,8 @@ const ProjectDetails = () => {
   const { title, site, description, imgUrl, content, images } = project;
 
   return (
-    project && (
+    <>
+      project && (
       <StyledSection>
         <Container>
           <ProjectContainer>
@@ -179,7 +192,9 @@ const ProjectDetails = () => {
           </ProjectContainer>
         </Container>
       </StyledSection>
-    )
+      )
+      <Footer />
+    </>
   );
 };
 

@@ -6,9 +6,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 import Navbar from "./container/Navbar";
 import Home from "./pages/Home";
-import Footer from "./container/Footer";
 import About from "./pages/About";
 import ProjectDetails from "./pages/ProjectDetails";
+import ErrorPage from "./pages/ErrorPage";
 
 let quoteData = {
   content: "",
@@ -47,16 +47,16 @@ function App() {
       <AnimatePresence>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Navbar />}>
-            <Route index element={<Home />}></Route>
+            <Route index element={<Home />} />
             <Route
               path="about"
               element={<About quote={quote} error={error} />}
             ></Route>
             <Route path="projects/:slug" element={<ProjectDetails />} />
           </Route>
+          <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </AnimatePresence>
-      <Footer />
     </>
   );
 }

@@ -68,7 +68,7 @@ const Image = styled.img`
 
 const ProjectCard = ({ item }) => {
   const { title, description, slug, imgUrl, badges } = item;
-  // console.log("project card");
+
   return (
     <>
       <ProjectContainer>
@@ -88,7 +88,7 @@ const ProjectCard = ({ item }) => {
             />
           </NavLink>
 
-          <Desc>{description}</Desc>
+          <Desc>{description && `${description?.slice(0, 140)}...`}</Desc>
         </LeftContainer>
         <RightContainer>
           <ImgContainer>
