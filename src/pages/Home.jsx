@@ -17,8 +17,8 @@ const Home = () => {
       <ProjectSection />
       <SkillSection />
       <ContactSection />
-      <Footer/>
       <SocialMediaIcons />
+      <Footer />
     </motion.div>
   );
 };
