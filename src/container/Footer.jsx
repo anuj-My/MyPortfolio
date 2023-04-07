@@ -8,7 +8,6 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   background-color: #172026;
   padding: 2rem 0;
-  margin-top: 5rem;
 
   div {
     height: 100%;

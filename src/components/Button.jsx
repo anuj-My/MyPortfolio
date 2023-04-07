@@ -56,9 +56,9 @@ const Btn = styled.a`
   }
 `;
 
-const Button = ({ color, bg, text, as, type, href, target }) => {
+const Button = ({ color, bg, text, as, ...others }) => {
   return (
-    <Btn color={color} bg={bg} as={as} type={type} href={href} target={target}>
+    <Btn color={color} bg={bg} as={as} {...others}>
       {text}
     </Btn>
   );

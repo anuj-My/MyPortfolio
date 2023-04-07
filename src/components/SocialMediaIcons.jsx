@@ -23,6 +23,7 @@ const IconsContainer = styled.div`
   }
 
   @media screen and (max-width: 960px) {
+    margin-bottom: 2rem;
     &::after {
       display: none;
     }

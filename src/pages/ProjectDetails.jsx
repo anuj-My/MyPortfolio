@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import PortableText from "react-portable-text";
 import { urlFor } from "../client";
 import styled from "styled-components";
@@ -9,25 +9,25 @@ import Icon from "../components/Icon";
 import Footer from "../container/Footer";
 
 const StyledSection = styled.section`
-  padding: 15rem 30rem 0rem 30rem;
+  padding: 12rem 30rem 0rem 30rem;
   min-height: 100vh;
   display: grid;
   align-items: center;
 
   @media screen and (max-width: 1372px) {
-    padding: 15rem 20rem;
+    padding: 12rem 20rem;
   }
 
   @media screen and (max-width: 1172px) {
-    padding: 15rem 10rem;
+    padding: 12rem 10rem;
   }
 
   @media screen and (max-width: 960px) {
-    padding: 15rem 5rem;
+    padding: 12rem 5rem;
   }
 
   @media screen and (max-width: 837px) {
-    padding: 15rem 3rem;
+    padding: 12rem 3rem;
   }
 `;
 
@@ -111,6 +111,7 @@ const InfoContainer = styled.div`
 `;
 
 const ProjectDetails = () => {
+  const history = useNavigate();
   const { slug } = useParams();
 
   const [project, setProject] = useState(null);
@@ -144,6 +145,17 @@ const ProjectDetails = () => {
       project && (
       <StyledSection>
         <Container>
+          <Button
+            color="#fefcfd"
+            bg="#172026"
+            text={"Go Back"}
+            onClick={() => history(-1)}
+            style={{
+              marginBottom: "3rem",
+              fontSize: "1.4rem",
+              padding: "1rem 2.5rem",
+            }}
+          />
           <ProjectContainer>
             <Heading>{title}</Heading>
             <ParaSmall>Summary</ParaSmall>
