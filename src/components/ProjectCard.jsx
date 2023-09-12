@@ -74,6 +74,7 @@ const ProjectCard = ({ item }) => {
       <ProjectContainer>
         <LeftContainer>
           <Title>{title}</Title>
+          <span>Test Account: email: <strong>abhi@test.com</strong> and pass: <strong>123456789</strong></span>
           <BadgeContainer>
             {badges?.map((item) => {
               return <Badge key={item}> {item}</Badge>;
