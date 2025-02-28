@@ -172,7 +172,7 @@ const ProjectDetails = () => {
                 color="#fefcfd"
                 bg="#172026"
                 text="View"
-                href={`https://${site}.netlify.com`}
+                href={`https://${site}.netlify.app`}
                 target="_blank"
               />
             </BtnContainer>
